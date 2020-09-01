@@ -22,6 +22,7 @@
         "prettier/prettier": "error",
         "class-methods-use-this" :"off",
         "no-console": "off",
+        "camelcase": ["error", {"allow": ["created_at", "updated_at", "provider_id"]}],
 	   	"import/extensions": [
 	      "error",
 	      "ignorePackages",
