@@ -1,5 +1,6 @@
-import CreateAppointmentService from './CreateAppointmentService';
+import 'reflect-metadata';
 import FakeAppointmentRepository from '../repositories/fakes/FakeAppointmentRepository';
+import CreateAppointmentService from './CreateAppointmentService';
 
 describe('CreateAppointment', () => {
   it('should be able to create a new appointment', async () => {
