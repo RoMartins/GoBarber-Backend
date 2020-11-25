@@ -46,4 +46,3 @@ export default class AuthenticateUserService {
     return { user, token };
   }
 }
-
