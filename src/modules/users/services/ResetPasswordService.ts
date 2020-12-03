@@ -1,5 +1,6 @@
 import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
+import { isAfter, addHours } from 'date-fns';
 // import User from '../infra/typeorm/entities/User';
 // import AppError from '../../../shared/errors/AppError';
 
@@ -12,7 +13,7 @@ interface IRequest {
   token: string;
 }
 @injectable()
-export default class SendForgotPasswordEmailService {
+export default class ResetPasswordService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUserRepository,
@@ -34,6 +35,16 @@ export default class SendForgotPasswordEmailService {
 
     if (!user) {
       throw new AppError('User does not exists');
+    }
+
+    const TokenCreatedAt = userToken.created_at;
+
+    const expireHourToken = addHours(TokenCreatedAt, 2);
+
+    console.log(new Date(Date.now()), 'now');
+    console.log(expireHourToken, '****expires');
+    if (isAfter(Date.now(), expireHourToken)) {
+      throw new AppError('token expired');
     }
 
     user.password = await this.hashProvider.generateHash(password);
