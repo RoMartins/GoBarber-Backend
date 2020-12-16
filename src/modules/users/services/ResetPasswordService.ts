@@ -41,8 +41,6 @@ export default class ResetPasswordService {
 
     const expireHourToken = addHours(TokenCreatedAt, 2);
 
-    console.log(new Date(Date.now()), 'now');
-    console.log(expireHourToken, '****expires');
     if (isAfter(Date.now(), expireHourToken)) {
       throw new AppError('token expired');
     }
