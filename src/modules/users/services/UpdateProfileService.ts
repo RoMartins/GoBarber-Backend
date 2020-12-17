@@ -18,7 +18,7 @@ export default class UpdateProfileService {
     @inject('UsersRepository')
     private usersRepository: IUserRepository,
 
-    @inject('IHashProvider')
+    @inject('HashProvider')
     private HashProvider: IHashProvider,
   ) {}
 
