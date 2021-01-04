@@ -25,7 +25,6 @@ export default class EtherealMailProvider implements IMailProvider {
           rejectUnauthorized: false,
         },
       });
-      console.log(account);
 
       this.client = transporter;
     });
@@ -49,8 +48,5 @@ export default class EtherealMailProvider implements IMailProvider {
       subject,
       html: await this.mailTemplateProvider.parse(templateData),
     });
-
-    console.log('message sent : ', message.messageId);
-    console.log('message sent : ', nodemailer.getTestMessageUrl(message));
   }
 }
