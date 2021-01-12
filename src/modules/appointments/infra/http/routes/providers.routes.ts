@@ -18,6 +18,7 @@ ProvidersRouter.post(
   '/:provider_id/month-availability',
   providerMonthAvailabilityService.index,
 );
+
 ProvidersRouter.post(
   '/:provider_id/day-availability',
   providerDayAvailabilityService.index,
