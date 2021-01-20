@@ -11,7 +11,7 @@ import AvatarUserController from '../controllers/AvatarUserController';
 const usersRouter = Router();
 const usersControllers = new UsersControllers();
 const avatarUserController = new AvatarUserController();
-const upload = multer(uploadConfig);
+const upload = multer(uploadConfig.multer);
 
 usersRouter.get('/', async (request, response) => {
   // const createUser = new CreateUserService();
