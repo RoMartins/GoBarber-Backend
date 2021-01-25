@@ -42,7 +42,6 @@ export default class ListProviderAppoinmentsService {
           year,
         },
       );
-      console.log('buscou ');
 
       await this.cacheProvider.save(cacheKey, appointments);
     }

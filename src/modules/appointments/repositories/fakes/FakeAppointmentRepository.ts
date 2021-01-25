@@ -46,7 +46,6 @@ class AppointmentRepository implements IApponintmentsRepository {
     const findAppointment = this.appointments.find(appointment =>
       isEqual(date, appointment.date),
     );
-    console.log(findAppointment);
 
     return findAppointment;
   }

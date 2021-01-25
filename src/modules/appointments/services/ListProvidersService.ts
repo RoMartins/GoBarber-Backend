@@ -28,7 +28,6 @@ export default class ListProvidersService {
       });
 
       await this.cacheProvider.save(`providers-list:${user_id}`, users);
-      console.log('a query foi feita');
     }
 
     return users;
