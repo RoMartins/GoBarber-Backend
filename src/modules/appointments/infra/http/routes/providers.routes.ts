@@ -15,7 +15,7 @@ const providerDayAvailabilityService = new ProviderDayAvailabilityController();
 ProvidersRouter.use(ensureAuthenticated);
 
 ProvidersRouter.get('/', providersControllers.index);
-ProvidersRouter.post(
+ProvidersRouter.get(
   '/:provider_id/month-availability',
   celebrate({
     [Segments.PARAMS]: {
@@ -25,7 +25,7 @@ ProvidersRouter.post(
   providerMonthAvailabilityService.index,
 );
 
-ProvidersRouter.post(
+ProvidersRouter.get(
   '/:provider_id/day-availability',
   celebrate({
     [Segments.PARAMS]: {
