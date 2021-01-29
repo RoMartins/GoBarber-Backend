@@ -19,7 +19,7 @@ export default class ProviderMonthAvailabilityController {
         year: Number(year),
       },
     );
-
+    console.log('chegou');
     return response.json(availabilityMonthAppointments);
   }
 }
